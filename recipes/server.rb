@@ -6,17 +6,13 @@ end
 
 template "/etc/mosquitto/mosquitto.conf" do
   source "mosquitto.conf.erb"
-
   mode 0640
-
   notifies :reload, "service[mosquitto]"
 end
 
 service 'mosquitto' do
   # provider service_provider
   service_name 'mosquitto'
-
   supports restart: true, status: true, reload: true
-
-  action :nothing
+  action [:enable, :start]
 end
