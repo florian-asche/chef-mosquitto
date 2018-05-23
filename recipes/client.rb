@@ -5,7 +5,7 @@ case node['platform']
     client_packages = %w{mosquitto-clients libmosquitto0 libmosquitto0-dev libmosquittopp0 libmosquittopp0-dev python-mosquitto}
   when 'debian'
     if node['platform_version'].to_i == 9
-      client_packages = %w{mosquitto-clients libmosquitto0 libmosquitto0-dev libmosquittopp0 libmosquittopp0-dev}
+      client_packages = %w{mosquitto-clients libmosquitto1 libmosquitto1-dev libmosquittopp1 libmosquittopp1-dev}
     elsif node['platform_version'].to_i <= 7
       client_packages = %w{mosquitto-clients libmosquitto0 libmosquitto0-dev libmosquittopp0 libmosquittopp0-dev python-mosquitto}
     else
